@@ -116,7 +116,7 @@ ci = confint(m, level = 0.90)
 ci
 # ci ==  1.035571 & 1.40041
 
-g= ggplot(data = d, aes(x=log(Brain_Size_Species_Mean), y=MaxLongevity_m)) + geom_point() + geom_smooth(method = "lm", formula = y ~ x) + geom_text(aes(x=.5, y=.7,label= "MaxLongevity_m ~ Brain_Size_Species_Mean"))
+g= ggplot(data = d, aes(x=log(Brain_Size_Species_Mean), y=MaxLongevity_m)) + geom_point() + geom_smooth(method = "lm", formula = y ~ x) + annotate("text", x = 4, y = 25, label = "y = 1.218x + 248.952")
 g
 ```
 
@@ -148,9 +148,9 @@ g1 <- g1 + geom_line(data = df, aes(x = v, y = CIupr), colour = "blue")
 g1 <- g1 + geom_line(data = df, aes(x = v, y = PIlwr), colour = "red")
 g1 <- g1 + geom_line(data = df, aes(x = v, y = PIupr), colour = "red")
 
-g1 
+g1 = g1 + annotate("text", x = 350, y = 225, label = "red = 90% PI interval, blue = 90% CI interval")
+g1                              
 
-#NEED TO ADD LEGEND!!!
 ```
 
 
@@ -194,10 +194,9 @@ ci = confint(m, level = 0.90)
 ci
 # ci == 0.2046396 & 0.2636595
 
-g= ggplot(data = d, aes(x=Brain_Size_Species_Mean, y=MaxLongevity_m)) + geom_point() + geom_smooth(method = "lm", formula = y~x) + geom_text(aes(x=.1, y=.2,label= "MaxLongevity_m ~ Brain_Size_Species_Mean"))
+g= ggplot(data = d, aes(x=Brain_Size_Species_Mean, y=MaxLongevity_m)) + geom_point() + geom_smooth(method = "lm", formula = y~x) + annotate("text", x = 4, y = 4.5, label = "y = 1.218x + 248.952") 
 g
 
-#FIX LABEL THINGY FOR TEXT OF MODEL
 ```
 
 
@@ -228,9 +227,9 @@ g1 <- g1 + geom_line(data = df, aes(x = v, y = CIupr), colour = "blue")
 g1 <- g1 + geom_line(data = df, aes(x = v, y = PIlwr), colour = "red")
 g1 <- g1 + geom_line(data = df, aes(x = v, y = PIupr), colour = "red")
 
-g1 
+g1 = g1 + annotate("text", x = 4, y = 4, label = "red = 90% PI interval, blue = 90% CI interval")
+g1
 
-#NEED TO ADD LEGEND!!!
 ```
 
 
